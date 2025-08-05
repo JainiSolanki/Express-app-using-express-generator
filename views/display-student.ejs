@@ -1,0 +1,20 @@
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+    </tr>
+    <% for(var i=0;i<mydata.length;i++) { %>
+        <tr>
+            <td>
+                <%= mydata[i].sname %>
+            </td>
+            <td>
+                <%= mydata[i].semail %>
+            </td>
+            <td>
+                <%= mydata[i].smobile %>
+            </td>
+        </tr>
+    <%}%>
+</table>

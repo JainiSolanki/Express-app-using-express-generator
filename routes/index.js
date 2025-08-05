@@ -32,4 +32,26 @@ router.post('/add-student-process', function(req, res, next) {
   .catch((err)=>res.send("Error" +err))
 });
 
+router.get('/display-student', function(req, res, next) {
+  StudentModel.find()
+  .then ((data)=> {
+    console.log(data);
+    res.render('display-student', {mydata:data})
+  })
+  .catch((err) => {
+    console.error(err.message)
+  })
+});
+
+router.get('/display-student-api', function(req, res, next) {
+  StudentModel.find()
+  .then ((data)=> {
+    console.log(data);
+    res.json(data)
+  })
+  .catch((err) => {
+    console.error(err.message)
+  })
+});
+
 module.exports = router;
