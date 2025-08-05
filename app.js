@@ -3,6 +3,15 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const mongoose = require('mongoose');
+// Connect to MongoDB
+mongoose.connect('mongodb://127.0.0.1:27017/charusat')
+.then(() => {
+  console.log("Mongo DB connected");
+})
+.catch ((err) => {
+  console.error(err.message)
+})
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
